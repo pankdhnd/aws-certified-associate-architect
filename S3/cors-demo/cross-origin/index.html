@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <script>
+      function getRemoteResource() {
+        var tofetch = document.getElementById("tofetch");
+        fetch('https://my-another-domain-website.s3.ap-south-1.amazonaws.com/another-page.html')
+              .then((response) => { 
+                  return response.text();
+              })
+              .then((html) => {
+                  tofetch.innerHTML = html     
+              })
+              .catch(error => {
+                    // error handling here
+                    alert('Did not work');
+              });          
+      }
+    </script>
+  </head>
+  <body>
+    <h1> CORS Demo </h1> 
+    <p>Click the button to test access to a cross origin resource!<p>
+    <button onclick="getRemoteResource();" type="button">Test!</button>
+    <div id="tofetch"/>
+    </div>
+  </body>
+</html>
