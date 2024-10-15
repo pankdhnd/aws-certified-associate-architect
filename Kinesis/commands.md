@@ -3,7 +3,7 @@
 aws --version
 ```
 
-## V2 is the current/latest version of AWS CLI and there are high chances that this is the version you will see on the CloudShell
+## V2 is the current/latest version of AWS CLI and there are high chances that this is the version you will see on the CloudShell   
 
 
 ## Producer 
@@ -24,7 +24,6 @@ aws kinesis describe-stream --stream-name test
 ```
 ### Consume the data from the stream
 ```shell
-# Consume some data
 aws kinesis get-shard-iterator --stream-name test --shard-id shardId-000000000000 --shard-iterator-type TRIM_HORIZON
 ```
 ### Ger records using shard iterator
